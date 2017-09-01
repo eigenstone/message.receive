@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lumi.largedata.family.emq.send.util.PushMsgUtil;
+import com.lumi.bigdata.family.emq.send.util.PushMsgUtil;
 
 /**
  * 测试:
@@ -16,23 +16,26 @@ import com.lumi.largedata.family.emq.send.util.PushMsgUtil;
  */
 public class TestPushMsg {
 	//需填入由绿米生成的密钥对,用于加密数据
-	static String appKey = "填入appkey";
-	static String appSecret = "填入appsecret";
+	static String appKey = "4110402660943082512";
+	static String appSecret = "h3fnX+uDWSPeYv2uyuAJUg==";
 
 	public static void main(String[] args) throws Exception {
 		//启动本项目,尝试往本项目发数据
 		JSONObject jsonObject = sendMessage();
 		System.out.println(jsonObject);
 		System.out.println(jsonObject.getString("result"));
-
+		
 		//测试接口获取数据
-		JSONObject jsonObject2 = addMinum();
-		System.out.println(jsonObject2);
-		System.out.println(jsonObject2.getString("result"));
-
-		JSONObject jsonObject3 = getDeviceInfo();
-		System.out.println(jsonObject3);
-		System.out.println(jsonObject3.getString("result"));
+		//JSONObject jsonObject2 = addMinum();
+		//System.out.println(jsonObject2);
+		//System.out.println(jsonObject2.getString("result"));
+		/**
+		for(int i = 0; i < 1000; i++){
+			JSONObject jsonObject3 = getDeviceInfo();
+			System.out.println(jsonObject3);
+			System.out.println(jsonObject3.getString("result"));
+		}
+		**/
 	}
 
 	/**
@@ -42,9 +45,8 @@ public class TestPushMsg {
 	 */
 	private static JSONObject addMinum() throws Exception {
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("minum", "123456789");
-		return PushMsgUtil.processRequest("http://open.aqara.cn/open/v1/user/minum", "/open/v1/user/minum", appKey,
-				appSecret, parameters, true);
+		parameters.put("minum", "406325485");
+		return PushMsgUtil.processRequest("http://open.aqara.cn/open/v1/user/minum", "/open/v1/user/minum", appKey, appSecret, parameters, true);
 	}
 
 	/**
@@ -54,7 +56,7 @@ public class TestPushMsg {
 	 */
 	private static JSONObject getDeviceInfo() throws Exception {
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("did", "lumi.123456789");
+		parameters.put("did", "lumi.158d00010f9f2b");
 		return PushMsgUtil.processRequest("http://open.aqara.cn/open/v1/device/getinfo", "/open/v1/device/getinfo",
 				appKey, appSecret, parameters, true);
 	}
@@ -72,8 +74,8 @@ public class TestPushMsg {
 	private static JSONObject sendMessage() throws Exception {
 
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("did", "lumi.1234567891111");
-		return PushMsgUtil.processRequest("http://ip:port/miSensorData", "/miSensorData", appKey, appSecret, parameters,
+		parameters.put("did", "lumi.158d00010f0f70");
+		return PushMsgUtil.processRequest("http://localhost:8080/miSensorData", "/miSensorData", appKey, appSecret, parameters,
 				true);
 		/**
 		Map<String, Object> parameters = new HashMap<String, Object>();

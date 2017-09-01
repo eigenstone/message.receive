@@ -1,4 +1,4 @@
-package com.lumi.largedata.family.emq.send.util;
+package com.lumi.bigdata.family.emq.send.util;
 
 import java.nio.ByteBuffer;
 import java.security.SecureRandom;

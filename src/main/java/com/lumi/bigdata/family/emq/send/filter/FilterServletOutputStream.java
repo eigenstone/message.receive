@@ -1,4 +1,4 @@
-package com.lumi.largedata.family.emq.send.filter;
+package com.lumi.bigdata.family.emq.send.filter;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
