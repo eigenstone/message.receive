@@ -1,4 +1,4 @@
-package com.lumi.largedata.family.emq.send.util;
+package com.lumi.bigdata.family.emq.send.util;
 
 import java.net.URLEncoder;
 import java.util.Map;

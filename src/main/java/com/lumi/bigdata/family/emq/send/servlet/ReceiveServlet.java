@@ -1,4 +1,4 @@
-package com.lumi.largedata.family.emq.send.servlet;
+package com.lumi.bigdata.family.emq.send.servlet;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
-import com.lumi.largedata.family.emq.send.filter.DecryptDataFilter;
-import com.lumi.largedata.family.emq.send.filter.ErrorCode;
+import com.lumi.bigdata.family.emq.send.filter.DecryptDataFilter;
+import com.lumi.bigdata.family.emq.send.filter.ErrorCode;
 
 public class ReceiveServlet extends HttpServlet{
 	
@@ -30,8 +30,8 @@ public class ReceiveServlet extends HttpServlet{
 		System.out.println(data);
 		//返回
 		Map<String, Object> retData = responseResult(ErrorCode.OK);
-		resp.getWriter().write(JSON.toJSONString(retData));
-		//resp.getOutputStream().write(retData.toString().getBytes());
+		//resp.getWriter().write(JSON.toJSONString(retData));
+		resp.getOutputStream().write(JSON.toJSONString(retData).getBytes());
 	}
 	
 	/**

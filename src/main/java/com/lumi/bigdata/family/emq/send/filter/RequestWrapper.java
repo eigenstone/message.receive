@@ -1,4 +1,4 @@
-package com.lumi.largedata.family.emq.send.filter;
+package com.lumi.bigdata.family.emq.send.filter;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -8,6 +8,11 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
+/**
+ * 请求包装类
+ * @author xiatiansong
+ *
+ */
 public class RequestWrapper extends HttpServletRequestWrapper {
 
 	private Map<String, String[]> params = new HashMap<String, String[]>();
